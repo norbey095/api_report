@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api_report
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/report_db
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 9094
+
+
+appDescription: "Report API"
+appVersion: "1.0.0"
