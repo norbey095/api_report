@@ -73,4 +73,12 @@ jacocoTestReport {
 		html.required.set(true)
 		csv.required.set(false)
 	}
+
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					'**/com/emazon/api_report/ApiReportApplication*'
+			])
+		}))
+	}
 }

@@ -3,7 +3,7 @@ package com.emazon.api_report.infraestructure.output.adapter;
 import com.emazon.api_report.domain.model.ReportBuy;
 import com.emazon.api_report.domain.spi.IReportPersistencePort;
 import com.emazon.api_report.infraestructure.output.entity.ReportEntity;
-import com.emazon.api_report.infraestructure.output.mapper.ReportEntityMapper;
+import com.emazon.api_report.infraestructure.output.mapper.IReportEntityMapper;
 import com.emazon.api_report.infraestructure.output.repository.IReportRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 public class ReportAdapter implements IReportPersistencePort {
 
     private final IReportRepository reportRepository;
-    private final ReportEntityMapper reportEntityMapper;
+    private final IReportEntityMapper reportEntityMapper;
 
 
     @Override

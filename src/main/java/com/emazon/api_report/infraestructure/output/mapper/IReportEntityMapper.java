@@ -5,7 +5,7 @@ import com.emazon.api_report.infraestructure.output.entity.ReportEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface ReportEntityMapper {
+public interface IReportEntityMapper {
 
     ReportEntity reportBuyToReportEntity(ReportBuy reportBuy);
 }
