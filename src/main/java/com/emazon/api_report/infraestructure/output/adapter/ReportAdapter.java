@@ -7,6 +7,8 @@ import com.emazon.api_report.infraestructure.output.mapper.IReportEntityMapper;
 import com.emazon.api_report.infraestructure.output.repository.IReportRepository;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 public class ReportAdapter implements IReportPersistencePort {
 
@@ -18,5 +20,10 @@ public class ReportAdapter implements IReportPersistencePort {
     public void saveReport(ReportBuy reportBuy) {
         ReportEntity reportEntity = reportEntityMapper.reportBuyToReportEntity(reportBuy);
         reportRepository.save(reportEntity);
+    }
+
+    @Override
+    public List<ReportBuy> getBuy(String userName) {
+        return  reportEntityMapper.entityListToReportList(reportRepository.findByUserName(userName));
     }
 }

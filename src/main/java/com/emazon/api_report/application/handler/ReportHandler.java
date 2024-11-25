@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -27,6 +29,8 @@ public class ReportHandler implements IReportHandler {
         return new ResponseSuccess(ConstantsHandler.MESSAGES_SUCCESS, HttpStatus.CREATED.toString());
     }
 
-
-
+    @Override
+    public List<ReportBuyDto> getBuy(String userName) {
+        return reportMapper.reportListToReportDtoList(reportServicePort.getBuy(userName));
+    }
 }
